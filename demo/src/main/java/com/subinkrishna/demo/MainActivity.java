@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.ColorInt;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
@@ -13,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.subinkrishna.aspect.AspectRatioFrameLayout;
+import com.subinkrishna.aspect.AspectRatioLayout;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -36,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.list);
+        recyclerView.setHasFixedSize(true);
         //recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         recyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
         recyclerView.setAdapter(adapter);
@@ -53,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         @Override public void onBindViewHolder(ItemHolder holder, int position) {
             final AspectRatioFrameLayout v = (AspectRatioFrameLayout) holder.itemView;
             final Input input = inputs[position];
-            v.ratio(input.ratio);
+            v.ratio(input.ratio).lock(AspectRatioLayout.WIDTH);
             v.setBackgroundColor(input.backgroundColor);
             holder.textView.setText(input.label);
         }
