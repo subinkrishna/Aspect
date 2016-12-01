@@ -30,6 +30,7 @@ dependencies {
 
     // UI
     compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.squareup.okhttp:okhttp:2.4.0'
 
     // Testing
     testCompile 'junit:junit:4.12'
