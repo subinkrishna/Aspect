@@ -29,13 +29,19 @@ Or **Maven:**
 **XML:**
 
 ````xml
+<!-- AspectRatioImageView -->
 <com.subinkrishna.aspect.AspectRatioImageView
-        android:id="@+id/image"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scaleType="centerInside"
         app:lock="width"
         app:ratio="1"/>
+
+<!-- AspectRatioFrameLayout -->
+<com.subinkrishna.aspect.AspectRatioFrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:lock="width"
+        app:ratio="1.5"/>
 ````
 
 **Java:**
@@ -50,6 +56,7 @@ imageView
     // specified aspect ratio
     .lock(AspectRatioLayout.WIDTH);
 
+// Load image
 Picasso.with(context)
     .load(input.url)
     .resize(targetWidth, targetHeight)
