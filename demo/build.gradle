@@ -22,7 +22,8 @@ android {
 dependencies {
     // Local
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile project(':library')
+    //compile project(':library')
+    compile 'com.subinkrishna:aspect:1.0'
 
     // Compat
     compile 'com.android.support:appcompat-v7:25.0.1'
