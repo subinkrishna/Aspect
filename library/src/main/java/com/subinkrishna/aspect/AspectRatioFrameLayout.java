@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016 Subinkrishna Gopi
+ * Copyright (C) 2017 Subinkrishna Gopi
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,7 +50,7 @@ public class AspectRatioFrameLayout extends FrameLayout implements AspectRatioLa
         LayoutHelper.init(this, attrs);
     }
 
-    @Override public void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+    @Override protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         Spec spec = LayoutHelper.onMeasure(this);
         if (null != spec) {

@@ -10,7 +10,7 @@ Or get it using **Gradle:**
 
 ````groovy
 dependencies {
-    compile 'com.subinkrishna:aspect:1.0'
+    compile 'com.subinkrishna:aspect:1.2'
 }
 ````
 
@@ -20,7 +20,7 @@ Or **Maven:**
 <dependency>
   <groupId>com.subinkrishna</groupId>
   <artifactId>aspect</artifactId>
-  <version>1.0</version>
+  <version>1.2</version>
 </dependency>
 ````
 
@@ -65,7 +65,7 @@ Picasso.with(context)
 
 ## License
 
-    Copyright (C) 2016 Subinkrishna Gopi
+    Copyright (C) 2017 Subinkrishna Gopi
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016 Subinkrishna Gopi
+ * Copyright (C) 2017 Subinkrishna Gopi
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,13 +17,13 @@
 package com.subinkrishna.aspect;
 
 import android.content.Context;
+import android.support.v7.widget.AppCompatImageView;
 import android.util.AttributeSet;
-import android.widget.ImageView;
 
 /**
  * @author Subinkrishna Gopi
  */
-public class AspectRatioImageView extends ImageView implements AspectRatioLayout {
+public class AspectRatioImageView extends AppCompatImageView implements AspectRatioLayout {
 
     // Log tag
     private static final String TAG = "AspectRatioImageView";
@@ -43,7 +43,7 @@ public class AspectRatioImageView extends ImageView implements AspectRatioLayout
         super(context, attrs, defStyleAttr);
     }
 
-    @Override public void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+    @Override protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         Spec spec = LayoutHelper.onMeasure(this);
         if (null != spec) {
