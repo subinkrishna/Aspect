@@ -33,14 +33,21 @@ public class AspectRatioImageView extends AppCompatImageView implements AspectRa
 
     public AspectRatioImageView(Context context) {
         super(context);
+        init(context, null);
     }
 
     public AspectRatioImageView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        init(context, attrs);
     }
 
     public AspectRatioImageView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        init(context, attrs);
+    }
+
+    private void init(Context context, AttributeSet attrs) {
+        LayoutHelper.init(this, attrs);
     }
 
     @Override protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {

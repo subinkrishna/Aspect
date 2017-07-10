@@ -10,7 +10,7 @@ Or get it using **Gradle:**
 
 ````groovy
 dependencies {
-    compile 'com.subinkrishna:aspect:1.2'
+    compile 'com.subinkrishna:aspect:1.3'
 }
 ````
 
@@ -20,7 +20,7 @@ Or **Maven:**
 <dependency>
   <groupId>com.subinkrishna</groupId>
   <artifactId>aspect</artifactId>
-  <version>1.2</version>
+  <version>1.3</version>
 </dependency>
 ````
 
