@@ -4,11 +4,6 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Rect;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +15,12 @@ import com.squareup.picasso.NetworkPolicy;
 import com.squareup.picasso.Picasso;
 import com.subinkrishna.aspect.AspectRatioImageView;
 import com.subinkrishna.aspect.AspectRatioLayout;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -42,10 +43,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        Picasso picasso = Picasso.with(this);
-        picasso.setIndicatorsEnabled(true);
-        picasso.setLoggingEnabled(true);
 
         final Resources res = getResources();
         screenWidth = res.getDisplayMetrics().widthPixels;
@@ -87,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
             holder.textView.setText(input.label);
             holder.imageView.ratio(input.ratio).lock(AspectRatioLayout.WIDTH);
             final int targetW = screenWidth / 2;
-            Picasso.with(context).load(input.url)
+            Picasso.get().load(input.url)
                     .networkPolicy(NetworkPolicy.NO_CACHE)
                     .resize(targetW, (int)(targetW / input.ratio))
                     .into(holder.imageView, new Callback() {
@@ -95,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
                             root.setBackground(null);
                         }
 
-                        @Override public void onError() {
+                        @Override public void onError(Exception e) {
                             final Context context = root.getContext();
                             root.setBackground(ContextCompat.getDrawable(context, R.drawable.placeholder_broken));
                         }
