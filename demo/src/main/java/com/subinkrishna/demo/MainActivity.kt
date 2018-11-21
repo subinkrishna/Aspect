@@ -22,6 +22,8 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import com.subinkrishna.demo.ui.GridAdapter
+import com.subinkrishna.demo.ui.ViewItem
 
 /**
  * Demo grid activity

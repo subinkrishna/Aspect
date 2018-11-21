@@ -14,12 +14,27 @@
  * limitations under the License.
  */
 
-package com.subinkrishna.demo
+package com.subinkrishna.demo.ui
+
+import android.content.Context
+import android.util.AttributeSet
+import com.subinkrishna.aspect.AspectRatioLayout
+import com.subinkrishna.aspect.AspectRatioTextView
 
 /**
+ * A totally unnecessary extension. {@link AspectRatioTextView#ratio} is plenty sufficient.
+ *
  * @author Subinkrishna Gopi
  */
-sealed class ViewItem {
-    data class Image(val url: String, val ratio: Float) : ViewItem()
-    data class Text(val text: String, val ratio: Float = 1f) : ViewItem()
+class SquareTextView @JvmOverloads constructor(
+        context: Context,
+        attrs: AttributeSet? = null,
+        defStyleAttr: Int = android.R.attr.textViewStyle
+) : AspectRatioTextView(context, attrs, defStyleAttr) {
+
+    init {
+        super.ratio(1f)
+    }
+
+    override fun ratio(ratio: Float): AspectRatioLayout = this
 }

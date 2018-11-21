@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.subinkrishna.demo
+package com.subinkrishna.demo.ui
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.subinkrishna.demo
+package com.subinkrishna.demo.ui
 
 import android.graphics.drawable.ColorDrawable
 import android.view.LayoutInflater
@@ -24,7 +24,7 @@ import com.squareup.picasso.NetworkPolicy
 import com.squareup.picasso.Picasso
 import com.subinkrishna.aspect.AspectRatioImageView
 import com.subinkrishna.aspect.AspectRatioLayout
-import com.subinkrishna.aspect.AspectRatioTextView
+import com.subinkrishna.demo.R
 
 /**
  * Simple ViewHolders used in the demo app
@@ -56,12 +56,12 @@ class ImageViewHolder(private val v: AspectRatioImageView) : RecyclerView.ViewHo
 }
 
 /** Text view holder */
-class TextViewHolder(private val v: AspectRatioTextView) : RecyclerView.ViewHolder(v) {
+class TextViewHolder(private val v: SquareTextView) : RecyclerView.ViewHolder(v) {
     companion object {
         fun create(parent: ViewGroup): TextViewHolder {
             val v = LayoutInflater.from(parent.context).inflate(
                     R.layout.view_text_item, parent, false)
-            return TextViewHolder(v as AspectRatioTextView)
+            return TextViewHolder(v as SquareTextView)
         }
     }
 

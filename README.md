@@ -65,7 +65,7 @@ Picasso.with(context)
 
 ## License
 
-    Copyright (C) 2017 Subinkrishna Gopi
+    Copyright (C) 2018 Subinkrishna Gopi
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
